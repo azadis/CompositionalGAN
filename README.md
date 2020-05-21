@@ -1,9 +1,6 @@
 # Compositional GAN in PyTorch
 
 This is the implementation of the [Compositional GAN: Learning Image-Conditional Binary Composition](https://arxiv.org/pdf/1807.07560.pdf). The code was written by [Samaneh Azadi](https://github.com/azadis).
-If you use this code or our dataset for your research, please cite:
-
-Compositional GAN: Learning Image-Conditional Binary Composition; [Samaneh Azadi](https://people.eecs.berkeley.edu/~sazadi/), [Deepak Pathak](https://people.eecs.berkeley.edu/~pathak/), [Sayna Ebrahimi](https://saynaebrahimi.github.io), [Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/), in arXiv, 2018.
 
 ## Prerequisites:
 - Linux or macOS
@@ -36,6 +33,7 @@ cd CompositionalGAN
 ```bash
 bash scripts/${obj1_obj2}/download_data.sh
 ```
+Individual chairs and tables are taken from Shapenet dataset (https://www.shapenet.org/), faces from CelebA dataset (http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html), and street scenes from Cityscapes (https://www.cityscapes-dataset.com/). 
 
 
 ## Training
@@ -95,4 +93,15 @@ python -m http.server 8884
 
 - Replace ```paired``` with ```unpaired``` if you are training under the latter scenario.
 - Then in your local machine: ```ssh -N -f -L localhost:8884:localhost:8884 remote_user@remote_host```
+
+## Citation
+If you use this code or our compositional dataset, please cite our paper:
+```
+@article{azadi2018compositional,
+  title={Compositional gan: Learning image-conditional binary composition},
+  author={Azadi, Samaneh and Pathak, Deepak and Ebrahimi, Sayna and Darrell, Trevor},
+  journal={arXiv preprint arXiv:1807.07560},
+  year={2018}
+}}
+```
 
