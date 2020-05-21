@@ -33,7 +33,7 @@ cd CompositionalGAN
 ```bash
 bash scripts/${obj1_obj2}/download_data.sh
 ```
-Individual chairs and tables are taken from Shapenet dataset (https://www.shapenet.org/), faces from CelebA dataset (http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html), and street scenes from Cityscapes (https://www.cityscapes-dataset.com/). 
+Individual chairs and tables are taken from [Shapenet dataset](https://www.shapenet.org/), faces from [CelebA dataset](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html), and street scenes from [Cityscapes](https://www.cityscapes-dataset.com/). 
 
 
 ## Training
