@@ -23,6 +23,7 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 --------------------------- LICENSE FOR CycleGAN-and-pix2pix --------------------------------
+
 For CycleGAN-and-pix2pix software
 Copyright (c) 2017, Jun-Yan Zhu and Taesung Park
 All rights reserved.
