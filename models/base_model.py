@@ -2,6 +2,7 @@ import os
 import torch
 import util.util as util
 
+# modified from https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
 class BaseModel():
     def name(self):
         return 'BaseModel'

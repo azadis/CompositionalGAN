@@ -20,6 +20,7 @@ from scipy import misc
 # Functions
 ###############################################################################
 
+
 def weights_init_constant(m):
     classname = m.__class__.__name__
     # print("classname:",classname)
@@ -233,6 +234,7 @@ def print_network(net):
 # When LSGAN is used, it is basically same as MSELoss,
 # but it abstracts away the need to create the target label tensor
 # that has the same size as the input
+# From https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
 class GANLoss(nn.Module):
     def __init__(self, use_lsgan=True, target_real_label=1.0, target_fake_label=0.0,
                  tensor=torch.FloatTensor):
@@ -507,6 +509,7 @@ class ResnetBlock(nn.Module):
 
 
 
+# From https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
 # Defines the PatchGAN discriminator with the specified arguments.
 class NLayerDiscriminator(nn.Module):
     def __init__(self, input_nc, ndf=64, n_layers=3, norm_layer=nn.BatchNorm2d, use_sigmoid=False, gpu_ids=[],y_x=1):
