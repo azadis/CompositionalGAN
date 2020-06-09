@@ -1,6 +1,7 @@
 # Compositional GAN in PyTorch
 
-This is the implementation of the [Compositional GAN: Learning Image-Conditional Binary Composition](https://arxiv.org/pdf/1807.07560.pdf). The code was written by [Samaneh Azadi](https://github.com/azadis).
+This is the implementation of the Compositional GAN: Learning Image-Conditional Binary Composition.. The code was written by [Samaneh Azadi](https://github.com/azadis). 
+[ArXiv](https://arxiv.org/pdf/1807.07560.pdf) [IJCV](https://link.springer.com/article/10.1007/s11263-020-01336-9?wt_mc=Internal.Event.1.SEM.ArticleAuthorOnlineFirst&utm_source=ArticleAuthorOnlineFirst&utm_medium=email&utm_content=AA_en_06082018&ArticleAuthorOnlineFirst_20200529)
 
 ## Prerequisites:
 - Linux or macOS
@@ -97,11 +98,13 @@ python -m http.server 8884
 ## Citation
 If you use this code or our compositional dataset, please cite our paper:
 ```
-@article{azadi2018compositional,
+@article{azadicompositional,
   title={Compositional gan: Learning image-conditional binary composition},
   author={Azadi, Samaneh and Pathak, Deepak and Ebrahimi, Sayna and Darrell, Trevor},
-  journal={arXiv preprint arXiv:1807.07560},
-  year={2018}
+  journal={International Journal of Computer Vision},
+  year={2020},
+  doi = {10.1007/s11263-020-01336-9},
+  url = {https://doi.org/10.1007/s11263-020-01336-9}
 }}
 ```
 
