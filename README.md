@@ -102,8 +102,7 @@ If you use this code or our compositional dataset, please cite our paper:
   author={Azadi, Samaneh and Pathak, Deepak and Ebrahimi, Sayna and Darrell, Trevor},
   journal={International Journal of Computer Vision},
   year={2020},
-  doi = {10.1007/s11263-020-01336-9},
-  url = {https://doi.org/10.1007/s11263-020-01336-9}
-}}
+  doi = {10.1007/s11263-020-01336-9}
+  }}
 ```
 
