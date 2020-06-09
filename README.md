@@ -1,7 +1,8 @@
 # Compositional GAN in PyTorch
 
 This is the implementation of the Compositional GAN: Learning Image-Conditional Binary Composition.. The code was written by [Samaneh Azadi](https://github.com/azadis). 
-[ArXiv](https://arxiv.org/pdf/1807.07560.pdf) [IJCV](https://link.springer.com/article/10.1007/s11263-020-01336-9?wt_mc=Internal.Event.1.SEM.ArticleAuthorOnlineFirst&utm_source=ArticleAuthorOnlineFirst&utm_medium=email&utm_content=AA_en_06082018&ArticleAuthorOnlineFirst_20200529)
+
+[[ArXiv](https://arxiv.org/pdf/1807.07560.pdf)] , [[IJCV](https://link.springer.com/article/10.1007/s11263-020-01336-9?wt_mc=Internal.Event.1.SEM.ArticleAuthorOnlineFirst&utm_source=ArticleAuthorOnlineFirst&utm_medium=email&utm_content=AA_en_06082018&ArticleAuthorOnlineFirst_20200529)]
 
 ## Prerequisites:
 - Linux or macOS
