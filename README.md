@@ -103,6 +103,6 @@ If you use this code or our compositional dataset, please cite our paper:
   journal={International Journal of Computer Vision},
   year={2020},
   doi = {10.1007/s11263-020-01336-9}
-  }}
+}
 ```
 
