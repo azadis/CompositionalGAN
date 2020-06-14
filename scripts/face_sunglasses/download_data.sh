@@ -12,6 +12,6 @@ if [ ! -d "dataset" ]; then
 fi
 
 cd dataset
-wget https://people.eecs.berkeley.edu/~sazadi/CompositionalGAN/dataset/face_sunglasses.tar.gz
+wget --no-check-certificate https://people.eecs.berkeley.edu/~sazadi/CompositionalGAN/dataset/face_sunglasses.tar.gz
 tar -xvzf face_sunglasses.tar.gz
 rm face_sunglasses.tar.gz
