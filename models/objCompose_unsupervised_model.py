@@ -278,8 +278,8 @@ class objComposeUnsuperviseModel(BaseModel):
 
         self.mask_A1_T = torch.mean(self.real_A1_T,dim=1,keepdim=True)
         self.mask_A2_T = torch.mean(self.real_A2_T,dim=1,keepdim=True)
-        self.mask_A1_T = (self.mask_A1_T<0.9*torch.max(self.mask_A1_T).data[0]).type(torch.cuda.FloatTensor)
-        self.mask_A2_T = (self.mask_A2_T<0.9*torch.max(self.mask_A2_T).data[0]).type(torch.cuda.FloatTensor)
+        self.mask_A1_T = (self.mask_A1_T<0.9*torch.max(self.mask_A1_T).data).type(torch.cuda.FloatTensor)
+        self.mask_A2_T = (self.mask_A2_T<0.9*torch.max(self.mask_A2_T).data).type(torch.cuda.FloatTensor)
         self.mask_A1_T = self.mask_A1_T.repeat(1,3,1,1)
         self.mask_A2_T = self.mask_A2_T.repeat(1,3,1,1)
         
@@ -320,8 +320,8 @@ class objComposeUnsuperviseModel(BaseModel):
         self.fake_A1_T, self.fake_A2_T = (self.netSTN_c(torch.cat((self.fake_A1.detach(),self.fake_A2),1)))
         self.mask_A1_T = torch.mean(self.fake_A1_T,dim=1,keepdim=True)
         self.mask_A2_T = torch.mean(self.fake_A2_T,dim=1,keepdim=True)
-        self.mask_A1_T = (self.mask_A1_T<self.opt.Thresh1*torch.max(self.mask_A1_T).data[0]).type(torch.cuda.FloatTensor)
-        self.mask_A2_T = (self.mask_A2_T<self.opt.Thresh2*torch.max(self.mask_A2_T).data[0]).type(torch.cuda.FloatTensor)
+        self.mask_A1_T = (self.mask_A1_T<self.opt.Thresh1*torch.max(self.mask_A1_T).data).type(torch.cuda.FloatTensor)
+        self.mask_A2_T = (self.mask_A2_T<self.opt.Thresh2*torch.max(self.mask_A2_T).data).type(torch.cuda.FloatTensor)
         # print(self.mask_A1_T.size(),self.mask_A1_T[0,0,:,:].data.cpu().numpy().shape)
 
 
@@ -806,7 +806,7 @@ class objComposeUnsuperviseModel(BaseModel):
 
         #TODO delete
         n_all = self.fake_B.size(2)*self.fake_B.size(3)
-        # lambda_fg = n0.data[0] / (n_all)
+        # lambda_fg = n0.data / (n_all)
 
         self.loss_G_seg = 0
         self.loss_G_seg +=  (0.5*self.criterionL1(torch.mul(self.real_M1_s.detach(), self.fake_B), 
@@ -815,7 +815,7 @@ class objComposeUnsuperviseModel(BaseModel):
                                     torch.mul(self.real_M2_s.detach(), self.fake_A2_T.detach())))
         # if there is a large background region:
         white_back = Variable(torch.ones(self.fake_B.size()).cuda())
-        if n0.data[0]>0.2*self.fake_B.size(2)*self.fake_B.size(3):
+        if n0.data>0.2*self.fake_B.size(2)*self.fake_B.size(3):
             self.loss_G_seg += self.criterionL1(torch.mul(self.real_M0_s.detach(), self.fake_B),
                         torch.mul(self.real_M0_s.detach(), white_back))
 
@@ -930,18 +930,28 @@ class objComposeUnsuperviseModel(BaseModel):
 
 
     def get_current_errors(self):
-        return OrderedDict([('G_GAN', self.loss_G_GAN.data[0]),
-                            ('D_real', self.loss_D_real.data[0]),
-                            ('D_fake', self.loss_D_fake.data[0]),
-                            ('G_L1', self.loss_G_L1.data[0]),
-                            ('GP', self.loss_gp.data[0]),
-                            ('G_seg', self.loss_G_seg.data[0]),
-                            ('G_AFN', self.loss_AFN.data[0]),
-                            ('G_mask', self.loss_G_mask.data[0]),
-                            ('STN', self.loss_STN.data[0]),
-                            ('G_compl', self.loss_G_completion.data[0]),
-                            ('D_compl', self.loss_D_completion.data[0])
+        return OrderedDict([('G_GAN', self.loss_G_GAN.data),
+                            ('D_real', self.loss_D_real.data),
+                            ('D_fake', self.loss_D_fake.data),
+                            ('G_L1', self.loss_G_L1.data),
+                            ('GP', self.loss_gp.data),
+                            ('G_seg', self.loss_G_seg.data),
+                            ('G_mask', self.loss_G_mask.data),
+                            ('STN', self.loss_STN.data),
+                            ('G_compl', self.loss_G_completion.data),
+                            ('D_compl', self.loss_D_completion.data)
                             ])
+
+
+    def get_current_errors_test(self):
+        return OrderedDict([('G_GAN', self.loss_G_GAN.data),
+                            ('D_real', self.loss_D_real.data),
+                            ('D_fake', self.loss_D_fake.data),
+                            ('G_L1', self.loss_G_L1.data),
+                            ('GP', self.loss_gp.data),
+                            ('G_seg', self.loss_G_seg.data)
+                            ])
+
 
     def get_current_visuals_STN(self):
         vis_tensors = ['stn_B1_T', 'stn_B2_T', 'stn_B1', 'stn_B2','real_B', 'real_B1_T', 

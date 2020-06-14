@@ -12,10 +12,10 @@ if [ ! -d "checkpoints" ]; then
 fi
 
 cd checkpoints
-wget https://people.eecs.berkeley.edu/~sazadi/CompositionalGAN/ckpts/basket_bottle_train_paired_compGAN.tar.gz
+wget --no-check-certificate https://people.eecs.berkeley.edu/~sazadi/CompositionalGAN/ckpts/basket_bottle_train_paired_compGAN.tar.gz
 tar -xvzf basket_bottle_train_paired_compGAN.tar.gz
 
-wget https://people.eecs.berkeley.edu/~sazadi/CompositionalGAN/ckpts/basket_bottle_train_unpaired_compGAN.tar.gz
+wget --no-check-certificate  https://people.eecs.berkeley.edu/~sazadi/CompositionalGAN/ckpts/basket_bottle_train_unpaired_compGAN.tar.gz
 tar -xvzf basket_bottle_train_unpaired_compGAN.tar.gz
 
 

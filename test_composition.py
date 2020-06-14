@@ -119,7 +119,7 @@ for i, data in enumerate(dataset_test):
                 visualizer.display_current_results(visuals, total_steps, save_result,opt.update_html_freq,im_name, n_latest=opt.n_latest)
 
             if total_steps % opt.print_freq == 0:
-                errors = model.get_current_errors()
+                errors = model.get_current_errors_test()
                 t = (time.time() - iter_start_time) / opt.batchSize
                 visualizer.print_current_errors(epoch, epoch_iter, errors, t)
                 if opt.display_id > 0:

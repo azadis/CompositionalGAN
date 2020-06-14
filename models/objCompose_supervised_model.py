@@ -670,6 +670,14 @@ class objComposeSuperviseModel(BaseModel):
                             ('G_mask', self.loss_segmetation.data)
                             ])
 
+    def get_current_errors_test(self):
+        return OrderedDict([('G_GAN', self.loss_G_GAN.data),
+                            ('D_real', self.loss_D_real.data),
+                            ('D_fake', self.loss_D_fake.data),
+                            ('G_L1', self.loss_G_L1.data),
+                            ('GP', self.loss_gp.data)
+                            ])
+
 
     def get_current_visuals(self):
         vis_tensors = ['real_A1', 'real_A2', 'fake_A1','fake_A2',
