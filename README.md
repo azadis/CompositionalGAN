@@ -76,6 +76,8 @@ or
 bash scripts/${obj1_obj2}/test_objCompose_unpaired.sh
 ```
 
+- Before launching the above scripts, set ```display_port``` to an arbitrary port number ```${port}``` in the bash file and start the visdom server ```python -m visdom.server -p ${port}```.
+
 
 ## Visualization
 - To visualize the test results for the ${obj1_obj2} paired training after ```${epoch}``` epochs:
