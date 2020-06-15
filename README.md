@@ -99,12 +99,11 @@ python -m http.server 8884
 ## Citation
 If you use this code or our compositional dataset, please cite our paper:
 ```
-@article{azadicompositional,
+@article{azadi2018compositional,
   title={Compositional gan: Learning image-conditional binary composition},
   author={Azadi, Samaneh and Pathak, Deepak and Ebrahimi, Sayna and Darrell, Trevor},
-  journal={International Journal of Computer Vision},
-  year={2020},
-  doi = {10.1007/s11263-020-01336-9}
+  journal={arXiv preprint arXiv:1807.07560},
+  year={2018}
 }
 ```
 
