@@ -62,10 +62,7 @@ bash scripts/${obj1_obj2}/train_objCompose_paired.sh
   ```
 
 ## Testing
-- To download our trained models on each binary composition task of ```${obj1_obj2}```:
-```
-bash scripts/${obj1_obj2}/download_ckpt.sh
-```
+- Download our trained models on each binary composition task from [here](https://drive.google.com/drive/folders/1Ge9NrLnWnt2wIjLBoClEY_tIPd17LXGF?usp=sharing).
 
 - To test your trained model or the above downloaded checkpoints, run
 ```bash
