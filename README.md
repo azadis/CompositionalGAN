@@ -29,10 +29,10 @@ cd CompositionalGAN
 ```
 
 ### Datasets
+
+- Download the datasets from [here](https://drive.google.com/drive/folders/1Ge9NrLnWnt2wIjLBoClEY_tIPd17LXGF?usp=sharing)
 - For each pair of objects ```${obj1_obj2}``` in {chair_table, basket_bottle, city_car, face_sunglasses}, download the dataset by:
-```bash
-bash scripts/${obj1_obj2}/download_data.sh
-```
+
 Individual chairs and tables are taken from [Shapenet dataset](https://www.shapenet.org/), faces from [CelebA dataset](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html), and street scenes from [Cityscapes](https://www.cityscapes-dataset.com/). 
 
 
